@@ -26,25 +26,25 @@ function InsertarDatos(data) {
     document.getElementById("nom").focus()
     Vaciar()
 }
-function Vaciar() {
+function Vaciar() {     //Funcion de Limpiar
     document.getElementById("nom").value = ""
     document.getElementById("ape").value = ""
     document.getElementById("pais").value = ""
     Fila = null
 }
-function Editarr(td) {
+function Editarr(td) {      //Funcion de Editar
     Fila = td.parentElement.parentElement
     document.getElementById("nom").value = Fila.cells[0].innerHTML
     document.getElementById("ape").value = Fila.cells[1].innerHTML
     document.getElementById("pais").value = Fila.cells[2].innerHTML
 }
-function Actualizar(DataForm) {
+function Actualizar(DataForm) {     //Funcion de Actualizar
     Fila.cells[0].innerHTML = DataForm.nom
     Fila.cells[1].innerHTML = DataForm.ape
     Fila.cells[2].innerHTML = DataForm.pais
     document.getElementById("nom").focus()
 }
-function Borrarr(td) {
+function Borrarr(td) {      //Funcion de elimicacion
     if (confirm('¿Seguro de borrar este registro?')) {
         row = td.parentElement.parentElement
         document.getElementById("tabla").deleteRow(row.rowIndex)
